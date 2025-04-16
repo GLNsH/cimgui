@@ -216,7 +216,6 @@ typedef int ImGuiViewportFlags;
 typedef int ImGuiWindowFlags;
 typedef unsigned int ImWchar32;
 typedef unsigned short ImWchar16;
-
 #ifdef IMGUI_USE_WCHAR32            
 typedef ImWchar32 ImWchar;
 #else
@@ -242,8 +241,7 @@ typedef struct ImVec4 ImVec4;
 struct ImVec4
 {
     float x, y, z, w;
-};
-typedef ImU64 ImTextureID;
+};typedef ImU64 ImTextureID;
 typedef enum {
     ImGuiWindowFlags_None = 0,
     ImGuiWindowFlags_NoTitleBar = 1 << 0,
@@ -275,6 +273,10 @@ typedef enum {
     ImGuiWindowFlags_Popup = 1 << 26,
     ImGuiWindowFlags_Modal = 1 << 27,
     ImGuiWindowFlags_ChildMenu = 1 << 28,
+
+
+
+
 }ImGuiWindowFlags_;
 typedef enum {
     ImGuiChildFlags_None = 0,
@@ -287,6 +289,9 @@ typedef enum {
     ImGuiChildFlags_AlwaysAutoResize = 1 << 6,
     ImGuiChildFlags_FrameStyle = 1 << 7,
     ImGuiChildFlags_NavFlattened = 1 << 8,
+
+
+
 }ImGuiChildFlags_;
 typedef enum {
     ImGuiItemFlags_None = 0,
@@ -344,6 +349,11 @@ typedef enum {
     ImGuiTreeNodeFlags_LabelSpanAllColumns = 1 << 15,
     ImGuiTreeNodeFlags_NavLeftJumpsBackHere = 1 << 17,
     ImGuiTreeNodeFlags_CollapsingHeader = ImGuiTreeNodeFlags_Framed | ImGuiTreeNodeFlags_NoTreePushOnOpen | ImGuiTreeNodeFlags_NoAutoOpenOnLog,
+
+
+
+
+
 }ImGuiTreeNodeFlags_;
 typedef enum {
     ImGuiPopupFlags_None = 0,
@@ -367,6 +377,11 @@ typedef enum {
     ImGuiSelectableFlags_Disabled = 1 << 3,
     ImGuiSelectableFlags_AllowOverlap = 1 << 4,
     ImGuiSelectableFlags_Highlight = 1 << 5,
+
+
+
+
+
 }ImGuiSelectableFlags_;
 typedef enum {
     ImGuiComboFlags_None = 0,
@@ -447,6 +462,11 @@ typedef enum {
     ImGuiDockNodeFlags_NoResize = 1 << 5,
     ImGuiDockNodeFlags_AutoHideTabBar = 1 << 6,
     ImGuiDockNodeFlags_NoUndocking = 1 << 7,
+
+
+
+
+
 }ImGuiDockNodeFlags_;
 typedef enum {
     ImGuiDragDropFlags_None = 0,
@@ -462,6 +482,10 @@ typedef enum {
     ImGuiDragDropFlags_AcceptNoDrawDefaultRect = 1 << 11,
     ImGuiDragDropFlags_AcceptNoPreviewTooltip = 1 << 12,
     ImGuiDragDropFlags_AcceptPeekOnly = ImGuiDragDropFlags_AcceptBeforeDelivery | ImGuiDragDropFlags_AcceptNoDrawDefaultRect,
+
+
+
+
 }ImGuiDragDropFlags_;
 typedef enum {
     ImGuiDataType_S8,
@@ -684,6 +708,11 @@ typedef enum {
     ImGuiConfigFlags_DpiEnableScaleFonts = 1 << 15,
     ImGuiConfigFlags_IsSRGB = 1 << 20,
     ImGuiConfigFlags_IsTouchScreen = 1 << 21,
+
+
+
+
+
 }ImGuiConfigFlags_;
 typedef enum {
     ImGuiBackendFlags_None = 0,
@@ -755,6 +784,13 @@ typedef enum {
     ImGuiCol_NavWindowingDimBg,
     ImGuiCol_ModalWindowDimBg,
     ImGuiCol_COUNT,
+
+
+
+
+
+
+
 }ImGuiCol_;
 typedef enum {
     ImGuiStyleVar_Alpha,
@@ -1043,8 +1079,7 @@ struct ImGuiKeyData
 typedef struct ImVector_ImWchar {int Size;int Capacity;ImWchar* Data;} ImVector_ImWchar;
 
 struct ImGuiIO
-{
-    ImGuiConfigFlags ConfigFlags;
+{    ImGuiConfigFlags ConfigFlags;
     ImGuiBackendFlags BackendFlags;
     ImVec2 DisplaySize;
     float DeltaTime;
@@ -1103,8 +1138,7 @@ struct ImGuiIO
     const char* BackendRendererName;
     void* BackendPlatformUserData;
     void* BackendRendererUserData;
-    void* BackendLanguageUserData;
-    bool WantCaptureMouse;
+    void* BackendLanguageUserData;    bool WantCaptureMouse;
     bool WantCaptureKeyboard;
     bool WantTextInput;
     bool WantSetMousePos;
@@ -1116,8 +1150,7 @@ struct ImGuiIO
     int MetricsRenderIndices;
     int MetricsRenderWindows;
     int MetricsActiveWindows;
-    ImVec2 MouseDelta;
-    ImGuiContext* Ctx;
+    ImVec2 MouseDelta;    ImGuiContext* Ctx;
     ImVec2 MousePos;
     bool MouseDown[5];
     float MouseWheel;
@@ -1308,8 +1341,7 @@ struct ImGuiSelectionExternalStorage
 {
     void* UserData;
     void (*AdapterSetItemSelected)(ImGuiSelectionExternalStorage* self, int idx, bool selected);
-};
-typedef unsigned short ImDrawIdx;
+};typedef unsigned short ImDrawIdx;
 typedef void (*ImDrawCallback)(const ImDrawList* parent_list, const ImDrawCmd* cmd);
 struct ImDrawCmd
 {
@@ -1692,8 +1724,7 @@ typedef int ImGuiSeparatorFlags;
 typedef int ImGuiTextFlags;
 typedef int ImGuiTooltipFlags;
 typedef int ImGuiTypingSelectFlags;
-typedef int ImGuiWindowRefreshFlags;
-extern ImGuiContext* GImGui;
+typedef int ImGuiWindowRefreshFlags;extern ImGuiContext* GImGui;
 typedef FILE* ImFileHandle;
 typedef struct ImVec1 ImVec1;
 struct ImVec1
@@ -1709,8 +1740,7 @@ struct ImRect
 {
     ImVec2 Min;
     ImVec2 Max;
-};
-typedef ImU32* ImBitArrayPtr;
+};typedef ImU32* ImBitArrayPtr;
 struct ImBitVector
 {
     ImVector_ImU32 Storage;
@@ -1788,6 +1818,7 @@ typedef enum {
     ImGuiItemFlags_Inputable = 1 << 20,
     ImGuiItemFlags_HasSelectionUserData = 1 << 21,
     ImGuiItemFlags_IsMultiSelect = 1 << 22,
+
     ImGuiItemFlags_Default_ = ImGuiItemFlags_AutoClosePopups,
 }ImGuiItemFlagsPrivate_;
 typedef enum {
@@ -1803,6 +1834,13 @@ typedef enum {
     ImGuiItemStatusFlags_Visible = 1 << 8,
     ImGuiItemStatusFlags_HasClipRect = 1 << 9,
     ImGuiItemStatusFlags_HasShortcut = 1 << 10,
+
+
+
+
+
+
+
 }ImGuiItemStatusFlags_;
 typedef enum {
     ImGuiHoveredFlags_DelayMask_ = ImGuiHoveredFlags_DelayNone | ImGuiHoveredFlags_DelayShort | ImGuiHoveredFlags_DelayNormal | ImGuiHoveredFlags_NoSharedDelay,
@@ -1880,6 +1918,7 @@ typedef enum {
 }ImGuiLayoutType_;
 typedef enum {
     ImGuiLogFlags_None = 0,
+
     ImGuiLogFlags_OutputTTY = 1 << 0,
     ImGuiLogFlags_OutputFile = 1 << 1,
     ImGuiLogFlags_OutputBuffer = 1 << 2,
@@ -2174,8 +2213,7 @@ struct ImGuiInputEvent
         ImGuiInputEventAppFocused AppFocused;
     };
     bool AddedByTestEngine;
-};
-typedef ImS16 ImGuiKeyRoutingIndex;
+};typedef ImS16 ImGuiKeyRoutingIndex;
 typedef struct ImGuiKeyRoutingData ImGuiKeyRoutingData;
 struct ImGuiKeyRoutingData
 {
@@ -2274,6 +2312,12 @@ typedef enum {
     ImGuiNavRenderCursorFlags_Compact = 1 << 1,
     ImGuiNavRenderCursorFlags_AlwaysDraw = 1 << 2,
     ImGuiNavRenderCursorFlags_NoRounding = 1 << 3,
+
+
+
+
+
+
 }ImGuiNavRenderCursorFlags_;
 typedef enum {
     ImGuiNavMoveFlags_None = 0,
@@ -2474,8 +2518,7 @@ struct ImGuiDockNode
     ImVec2 SizeRef;
     ImGuiAxis SplitAxis;
     ImGuiWindowClass WindowClass;
-    ImU32 LastBgColor;
-    ImGuiWindow* HostWindow;
+    ImU32 LastBgColor;    ImGuiWindow* HostWindow;
     ImGuiWindow* VisibleWindow;
     ImGuiDockNode* CentralNode;
     ImGuiDockNode* OnlyNodeWithWindows;
@@ -2618,6 +2661,7 @@ typedef enum {
     ImGuiDebugLogFlags_EventInputRouting = 1 << 9,
     ImGuiDebugLogFlags_EventDocking = 1 << 10,
     ImGuiDebugLogFlags_EventViewport = 1 << 11,
+
     ImGuiDebugLogFlags_EventMask_ = ImGuiDebugLogFlags_EventError | ImGuiDebugLogFlags_EventActiveId | ImGuiDebugLogFlags_EventFocus | ImGuiDebugLogFlags_EventPopup | ImGuiDebugLogFlags_EventNav | ImGuiDebugLogFlags_EventClipper | ImGuiDebugLogFlags_EventSelection | ImGuiDebugLogFlags_EventIO | ImGuiDebugLogFlags_EventFont | ImGuiDebugLogFlags_EventInputRouting | ImGuiDebugLogFlags_EventDocking | ImGuiDebugLogFlags_EventViewport,
     ImGuiDebugLogFlags_OutputToTTY = 1 << 20,
     ImGuiDebugLogFlags_OutputToTestEngine = 1 << 21,
@@ -3172,8 +3216,7 @@ struct ImGuiWindow
     ImGuiCond SetWindowCollapsedAllowFlags : 8;
     ImGuiCond SetWindowDockAllowFlags : 8;
     ImVec2 SetWindowPosVal;
-    ImVec2 SetWindowPosPivot;
-    ImVector_ImGuiID IDStack;
+    ImVec2 SetWindowPosPivot;    ImVector_ImGuiID IDStack;
     ImGuiWindowTempData DC;
     ImRect OuterRectClipped;
     ImRect InnerRect;
@@ -3183,8 +3226,7 @@ struct ImGuiWindow
     ImRect ClipRect;
     ImRect ContentRegionRect;
     ImVec2ih HitTestHoleSize;
-    ImVec2ih HitTestHoleOffset;
-    int LastFrameActive;
+    ImVec2ih HitTestHoleOffset;    int LastFrameActive;
     int LastFrameJustFocused;
     float LastTimeActive;
     float ItemWidthDefault;
@@ -3194,8 +3236,7 @@ struct ImGuiWindow
     float FontWindowScaleParents;
     float FontDpiScale;
     float FontRefSize;
-    int SettingsOffset;
-    ImDrawList* DrawList;
+    int SettingsOffset;    ImDrawList* DrawList;
     ImDrawList DrawListInst;
     ImGuiWindow* ParentWindow;
     ImGuiWindow* ParentWindowInBeginStack;
@@ -3204,13 +3245,11 @@ struct ImGuiWindow
     ImGuiWindow* RootWindowDockTree;
     ImGuiWindow* RootWindowForTitleBarHighlight;
     ImGuiWindow* RootWindowForNav;
-    ImGuiWindow* ParentWindowForFocusRoute;
-    ImGuiWindow* NavLastChildNavWindow;
+    ImGuiWindow* ParentWindowForFocusRoute;    ImGuiWindow* NavLastChildNavWindow;
     ImGuiID NavLastIds[ImGuiNavLayer_COUNT];
     ImRect NavRectRel[ImGuiNavLayer_COUNT];
     ImVec2 NavPreferredScoringPosRel[ImGuiNavLayer_COUNT];
-    ImGuiID NavRootFocusScopeId;
-    int MemoryDrawListIdxCapacity;
+    ImGuiID NavRootFocusScopeId;    int MemoryDrawListIdxCapacity;
     int MemoryDrawListVtxCapacity;
     bool MemoryCompacted;
     bool DockIsActive :1;
@@ -3492,10 +3531,8 @@ struct ImGuiTableTempData
     int TableIndex;
     float LastTimeActive;
     float AngledHeadersExtraWidth;
-    ImVector_ImGuiTableHeaderData AngledHeadersRequests;
-    ImVec2 UserOuterSize;
-    ImDrawListSplitter DrawSplitter;
-    ImRect HostBackupWorkRect;
+    ImVector_ImGuiTableHeaderData AngledHeadersRequests;    ImVec2 UserOuterSize;
+    ImDrawListSplitter DrawSplitter;    ImRect HostBackupWorkRect;
     ImRect HostBackupParentWorkRect;
     ImVec2 HostBackupPrevLineSize;
     ImVec2 HostBackupCurrLineSize;

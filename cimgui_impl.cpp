@@ -18,18 +18,6 @@
 #include "imgui_impl_opengl2.h"
 #endif
 
-#ifdef CIMGUI_USE_SDL2
-#include "imgui_impl_sdl2.h"
-#endif
-
-#ifdef CIMGUI_USE_SDL3
-#include "imgui_impl_sdl3.h"
-#endif
-
-#ifdef CIMGUI_USE_VULKAN
-#include "imgui_impl_vulkan.h"
-#endif
-
 #include "cimgui_impl.h"
 
 #ifdef CIMGUI_USE_VULKAN
